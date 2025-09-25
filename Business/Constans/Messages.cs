@@ -5,7 +5,8 @@ namespace Business.Constans
     {
         public static string ProductAdded = "Ürün eklendi.";
         public static string ProductNameInvalid = "Ürün ismi geçersiz.";
-        public static string ProductList = "Ürünler listelendi.";
+        public static string ProductsListed = "Ürünler listelendi.";
+        public static string MaintenanceTime = "Bakım zamanı...";
 
     }
 }

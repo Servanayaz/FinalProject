@@ -18,14 +18,14 @@ using DataAccess.Concrete.EntityFramework;
 //    Console.WriteLine(product.ProductName);
 //}
 
-static void ProductTest()
-{
-    ProductManager productManager = new ProductManager(new EfProductDal());
-    foreach (var product in productManager.GetAllByUnitPrice(40, 100))
-    {
-        Console.WriteLine(product.ProductName);
-    }
-}
+//static void ProductTest()
+//{
+//    ProductManager productManager = new ProductManager(new EfProductDal());
+//    foreach (var product in productManager.GetAllByUnitPrice(40, 100))
+//    {
+//        Console.WriteLine(product.ProductName);
+//    }
+//}
 //ProductTest();
 
 static void CategoryTest()
@@ -43,9 +43,19 @@ static void CategoryTest()
 static void ProductTest2()
 {
     ProductManager productManager2 = new ProductManager(new EfProductDal());
-    foreach (var product in productManager2.GetProductDetails())
+
+    var result = productManager2.GetProductDetails();
+
+    if (result.Success == true)
     {
-        Console.WriteLine(product.ProductName+ " / "+ product.CategoryName);
+        foreach (var product in result.Data)
+        {
+            Console.WriteLine(product.ProductName + " / " + product.CategoryName);
+        }
+    }
+    else
+    {
+        Console.WriteLine(result.Message);
     }
 }
 //ProductTest2();
