@@ -15,5 +15,7 @@ namespace Business.Abstract
         
         //Product GetById(int productId); Bu da böyle iken
         IDataResult<Product> GetById(int productId);
+
+        // Restful --> http -->  
     }
 }
